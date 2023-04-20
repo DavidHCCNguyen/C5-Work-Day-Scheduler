@@ -31,69 +31,23 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
+## what the steps does
+Get the current hour in 24-hour time using the dayjs library.
 
-The following animation demonstrates the application functionality:
+Add the appropriate class (past, present, or future) to each time block based on the current time.
 
-<!-- @TODO: create ticket to review/update image) -->
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
+The time blocks are represented by HTML elements with the class "time-block" and an id of the format "hour-[hour number]".
 
-## Grading Requirements
+The past class is added to time blocks for hours before the current hour, present class is added to the time block for the current hour, and future class is added to time blocks for hours after the current hour.
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+Add a click event listener to the save buttons.
 
-This Challenge is graded based on the following criteria:
+When a user clicks the save button associated with a time block, the user's input in the textarea of that time block is saved to local storage with the time block's id as the key.
 
-### Technical Acceptance Criteria: 40%
+Load any saved user input from local storage and display it in the appropriate textarea of each time block.
 
-* Satisfies all of the above acceptance criteria plus the following:
+Display the current date in the header of the page using dayjs.
 
-  * Uses a date utility library to work with date and time
+Overall, this code provides a simple and effective way for users to plan their daily tasks and track their progress.
 
-### Deployment: 32%
-
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the Challenge instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+<img src="Thing.png">
